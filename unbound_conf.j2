@@ -1,24 +1,24 @@
 
 remote-control:
-  control-enable: {{ control-enable }}
+  control-enable: {{ control_enable }}
 server:
   verbosity: {{ verbosity }}
-  do-not-query-localhost: {{ do-not-query-localhost }}
-  use-syslog: {{ use-syslog }}
-  extended-statistics: {{   extended-statistics }}
-  root-hints: {{ root-hints }}
-  num-threads: {{ num-threads }}
-  outgoing-port-permit: {{ outgoing-port-permit }}
-  outgoing-port-avoid: {{ outgoing-port-avoid }}
-  harden-glue: {{ harden-glue }}
-  harden-dnssec-stripped: {{ harden-dnssec-stripped }}
-  harden-below-nxdomain: {{ harden-below-nxdomain }}
-  harden-referral-path: {{ harden-referral-path }}
-  unwanted-reply-threshold: {{ unwanted-reply-threshold }}
-  edns-buffer-size: {{ edns-buffer-size }}
+  do-not-query-localhost: {{ do_not_query_localhost }}
+  use-syslog: {{ use_syslog }}
+  extended-statistics: {{   extended_statistics }}
+  root-hints: {{ root_hints }}
+  num-threads: {{ num_threads }}
+  outgoing-port-permit: {{ outgoing_port_permit }}
+  outgoing-port-avoid: {{ outgoing_port_avoid }}
+  harden-glue: {{ harden_glue }}
+  harden-dnssec-stripped: {{ harden_dnssec_stripped }}
+  harden-below-nxdomain: {{ harden_below_nxdomain }}
+  harden-referral-path: {{ harden_referral_path }}
+  unwanted-reply-threshold: {{ unwanted_reply_threshold }}
+  edns-buffer-size: {{ edns_buffer_size }}
   port: {{ port }}
   interface: {{ interface }}
-  {% for subnet in access-control-allow %}
+  {% for subnet in access_control_allow %}
   access-control: {{ subnet }} allow
   {% endfor %}
   tcp-upstream: no
