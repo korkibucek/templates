@@ -18,8 +18,9 @@ server:
   edns-buffer-size: {{ edns-buffer-size }}
   port: {{ port }}
   interface: {{ interface }}
-  access-control: 172.17.0.0/16 allow
-  access-control: 142.93.39.29/32 allow
+  {% for subnet in access-control-allow %}
+  access-control: {{ subnet }} allow
+  {% endfor %}
   tcp-upstream: no
   username: "unbound"
   directory: "/etc/unbound"
