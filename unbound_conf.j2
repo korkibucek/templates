@@ -1,0 +1,129 @@
+
+remote-control:
+  control-enable: {{ control-enable }}
+server:
+  verbosity: {{ verbosity }}
+  do-not-query-localhost: {{ do-not-query-localhost }}
+  use-syslog: {{ use-syslog }}
+  extended-statistics: {{   extended-statistics }}
+  root-hints: {{ root-hints }}
+  num-threads: {{ num-threads }}
+  outgoing-port-permit: {{ outgoing-port-permit }}
+  outgoing-port-avoid: {{ outgoing-port-avoid }}
+  harden-glue: {{ harden-glue }}
+  harden-dnssec-stripped: {{ harden-dnssec-stripped }}
+  harden-below-nxdomain: {{ harden-below-nxdomain }}
+  harden-referral-path: {{ harden-referral-path }}
+  unwanted-reply-threshold: {{ unwanted-reply-threshold }}
+  edns-buffer-size: {{ edns-buffer-size }}
+  port: {{ port }}
+  interface: {{ interface }}
+  access-control: 172.17.0.0/16 allow
+  access-control: 93.93.82.0/24 allow
+  access-control: 31.222.60.0/22 allow
+  access-control: 31.222.56.0/22 allow
+  access-control: 217.147.120.0/22 allow
+  access-control: 84.20.198.0/24 allow
+  access-control: 193.169.30.0/23 allow
+  access-control: 81.94.220.0/24 allow
+  access-control: 81.94.223.0/24 allow
+  access-control: 81.94.221.0/24 allow
+  access-control: 81.94.222.0/23 allow
+  access-control: 95.131.184.0/21 allow
+  access-control: 93.191.192.0/21 allow
+  access-control: 217.147.112.0/21 allow
+  access-control: 212.22.224.0/21 allow
+  access-control: 178.208.220.0/24 allow
+  access-control: 212.22.224.0/21 allow
+  access-control: 212.22.241.0/24 allow
+  access-control: 85.159.120.0/24 allow
+  access-control: 85.159.120.0/21 allow
+  access-control: 85.159.122.0/24 allow
+  access-control: 85.159.124.0/24 allow
+  access-control: 195.244.192.0/19 allow
+  access-control: 212.120.224.0/19 allow
+  access-control: 178.208.192.0/19 allow
+  access-control: 217.65.48.0/20 allow
+  access-control: 185.74.72.0/22 allow
+  access-control: 178.208.192.0/19 allow
+  access-control: 172.17.1.0/24 allow
+  access-control: 172.17.2.0/24 allow
+  access-control: 172.17.3.0/24 allow
+  access-control: 172.17.4.0/24 allow
+  access-control: 172.17.5.0/24 allow
+  access-control: 172.17.7.0/24 allow
+  access-control: 172.23.5.0/24 allow
+  access-control: 172.26.1.0/22 allow
+  access-control: 172.16.200.0/22 allow
+  access-control: 185.74.72.32/27 allow
+  access-control: 185.74.72.64/26 allow
+  access-control: 185.74.72.128/25 allow
+  access-control: 172.20.65.0/24 allow
+  access-control: 185.239.72.0/28 allow
+  access-control: 185.239.72.16/28 allow
+  tcp-upstream: no
+  username: "unbound"
+  directory: "/etc/unbound"
+  val-clean-additional: yes
+  val-log-level: 1
+  hide-identity: yes
+  hide-version: yes
+  verbosity: 1
+  do-ip4: yes
+  do-ip6: no
+  do-udp: yes
+  do-tcp: yes
+  use-syslog: no
+  logfile: /etc/unbound/log/unbound.log
+  log-time-ascii: yes
+  log-queries: yes
+  hide-identity: yes
+  hide-version: yes
+  prefetch: yes
+  prefetch-key: yes
+  num-threads: 4
+  msg-cache-size: 256m
+  msg-cache-slabs: 8
+  rrset-cache-size: 512m
+  rrset-cache-slabs: 8
+  infra-cache-slabs: 8
+  key-cache-slabs: 8
+  outgoing-range: 8192
+  num-queries-per-thread: 8192
+  harden-glue: yes
+  harden-dnssec-stripped: yes
+  use-caps-for-id: no
+  so-rcvbuf: 32m
+  unwanted-reply-threshold: 10000
+  val-clean-additional: yes
+  statistics-cumulative: yes
+  infra-cache-numhosts: 100000
+  outgoing-range: 32768
+  so-sndbuf: 32m
+  statistics-interval: 0
+  cache-min-ttl: 10
+forward-zone:
+  name: "."
+  forward-addr: 172.20.65.91
+forward-zone:
+  name: "facebook.com"
+  forward-addr: 172.20.65.92
+forward-zone:
+  name: "fbcdn.net"
+  forward-addr: 172.20.65.92
+forward-zone:
+  name: "gibtele.com"
+  forward-addr: 172.20.65.70
+  forward-addr: 172.20.65.71
+forward-zone:
+  name: "gibtelecom.net"
+  forward-addr: 172.20.65.70
+  forward-addr: 172.20.65.71
+forward-zone:
+  name: "rockolo.gi"
+  forward-addr: 172.20.65.70
+  forward-addr: 172.20.65.71
+forward-zone:
+  name: "wgibtelefaqsemailsetupthunde46e5768798rbirdv1734.weebly.com"
+  forward-addr: 172.20.65.70
+  forward-addr: 172.20.65.71
